@@ -103,7 +103,7 @@ export default function Index() {
           <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">
             🔥 Прямые поставки из Китая
           </Badge>
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-emerald-700">
             Майнинг оборудование по оптовым ценам
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
