@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import ContactForm from '@/components/ContactForm';
+import ContactModal from '@/components/ContactModal';
 
 export default function Index() {
   const [calcData, setCalcData] = useState({
@@ -117,6 +119,7 @@ export default function Index() {
               <Icon name="Calculator" className="h-5 w-5 mr-2" />
               Калькулятор прибыли
             </Button>
+            <ContactModal />
           </div>
           <div className="mt-16 relative">
             <img 
@@ -272,10 +275,13 @@ export default function Index() {
                     </span>
                   </div>
                 </div>
-                <Button className="w-full mt-6">
-                  <Icon name="TrendingUp" className="h-4 w-4 mr-2" />
-                  Подобрать оборудование
-                </Button>
+                <div className="flex gap-2 mt-6">
+                  <Button className="flex-1">
+                    <Icon name="TrendingUp" className="h-4 w-4 mr-2" />
+                    Подобрать
+                  </Button>
+                  <ContactModal />
+                </div>
               </div>
             </div>
           </Card>
@@ -302,6 +308,67 @@ export default function Index() {
             <div>
               <div className="text-3xl font-bold text-primary mb-2">99.5%</div>
               <div className="text-muted-foreground">положительных отзывов</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section id="contact" className="py-16 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Остались вопросы?</h2>
+            <p className="text-muted-foreground text-lg">
+              Наши эксперты помогут подобрать оптимальное решение для ваших задач
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            <ContactForm />
+            <div className="space-y-6">
+              <Card className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Icon name="Clock" className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Быстрый ответ</h3>
+                    <p className="text-sm text-muted-foreground">Ответим в течение 30 минут</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Наши специалисты работают 7 дней в неделю с 9:00 до 21:00 по московскому времени
+                </p>
+              </Card>
+              
+              <Card className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                    <Icon name="Users" className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Персональная консультация</h3>
+                    <p className="text-sm text-muted-foreground">Индивидуальный подход к каждому клиенту</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Поможем рассчитать прибыльность, выберем оборудование и организуем доставку
+                </p>
+              </Card>
+              
+              <Card className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Icon name="Headphones" className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Техническая поддержка</h3>
+                    <p className="text-sm text-muted-foreground">Помощь на всех этапах</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  От настройки оборудования до решения технических вопросов
+                </p>
+              </Card>
             </div>
           </div>
         </div>
@@ -379,6 +446,9 @@ export default function Index() {
                 <div className="flex items-center space-x-2">
                   <Icon name="MessageCircle" className="h-4 w-4" />
                   <span>Telegram: @cryptomining</span>
+                </div>
+                <div className="mt-4">
+                  <ContactModal />
                 </div>
               </div>
             </div>
